@@ -51,7 +51,7 @@ const calculateEstimate = (state: infoState) => {
         currentTotal += config.propsExtra;
     }
 
-    if (state.licenseType === 'commercial') currentTotal *= 2;
+    if (state.licenseType === 'commercial') currentTotal *= 3;
     if (state.licenseType === 'print') currentTotal *= 1.5;
 
     if (state.isPrivate) currentTotal *= 1.1;

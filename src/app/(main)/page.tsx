@@ -11,6 +11,7 @@ import {
     setLicenseType,
 } from '@/store/features/infoSlice';
 import { RootState } from '@/store/store';
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function Home() {
@@ -43,9 +44,11 @@ export default function Home() {
 
     return (
         <div>
-            <div className="main-page py-5 px-4 flex flex-col gap-5">
+            <div className="main-page py-5 px-4 flex flex-col gap-4">
                 <div className="section-colortype section-layout">
                     <h2 className={sectionTitleStyle}>Q1. 컬러 타입</h2>
+                    <p className={sectionSubStyle}></p>
+
                     <div className="radio-section">
                         {colorTypeList.map((item, idx) => (
                             <RadioButton
@@ -114,7 +117,13 @@ export default function Home() {
                 </div>
                 <div className="section-lisencetype section-layout">
                     <h2 className={sectionTitleStyle}>Q5. 작업물 용도</h2>
-                    <p className={sectionSubStyle}></p>
+                    <p className={sectionSubStyle}>
+                        {licenseType === 'personal'
+                            ? '비상업적 용도로 개인 SNS에 게시하거나 커뮤니티 등에서 사용 가능합니다.'
+                            : licenseType === 'commercial'
+                              ? '유튜브ㆍ생일 카페 배포용 굿즈 등에 해당합니다.'
+                              : '개인 굿즈 제작과 같은 비상업적 용도의 인쇄물로 사용 가능합니다.'}
+                    </p>
                     <div className="radio-section">
                         {licenseTypeList.map((item, idx) => (
                             <RadioButton
@@ -170,6 +179,13 @@ export default function Home() {
                     본 견적은 임시 견적으로, 신청서에 작성된 캐릭터 디자인과 구도 등에 따라 할인되거나 추가금이 발생할
                     수 있습니다.
                 </div>
+                <a
+                    href="https://kre.pe/W5NM"
+                    target="_blank"
+                    className="w-full py-4 px-8 my-2 flex flex-row items-center justify-between rounded-full text-xl font-medium text-white bg-indigo-500 "
+                >
+                    커미션 신청하기 <ChevronRightIcon className="size-8" />
+                </a>
             </div>
             {/* 총 합계 */}
             <div className="section-total-estimate sticky bottom-0 w-full max-width-2xl flex flex-row justify-between items-center px-4 py-6 bg-zinc-900 text-white">

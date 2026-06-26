@@ -10,7 +10,7 @@ export default function RadioButton({ buttonName, itemIndex, currentSelected, on
 
     return (
         <div
-            className={`flex justify-center w-full px-4 py-2 rounded-full border ${isActive ? 'bg-zinc-800 text-white border-zinc-800' : 'border-zinc-400'}`}
+            className={`flex justify-center w-full px-4 py-2 rounded-full border ${isActive ? 'bg-indigo-500 text-white border-indigo-500' : 'border-zinc-400'}`}
             onClick={onClick}
         >
             {buttonName}
